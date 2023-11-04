@@ -1,0 +1,20 @@
+
+
+
+#createButtonDiv{
+    margin-top: 15%;
+}
+
+#modalForm {
+    display: flex;
+    flex-direction: column;
+}
+
+#checklist {
+    background-color: white;
+    border: 1px solid black;
+}
+
+.cards {
+    margin-top: 10%;
+}

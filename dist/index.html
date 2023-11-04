@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src='main.js' defer></script>
+    <title>To-D0-List</title>
+</head>
+
+<body>
+
+    <div id="tabs"></div>
+    <div id="content"></div>
+    
+
+    <dialog id="myDialog">
+        <h2>Project details</h2>
+        <p>Press esc to when done</p>
+        <form onsubmit="return false">
+
+            <label for="name">Name:</label><br>
+            <input type="text" id="name" name="name"><br>
+
+            <label for="title">Title:</label><br>
+            <input type="text" id="title" name="title"><br>
+
+            <label for="description">Description:</label><br>
+            <input type="text" id="description" name="description"><br>
+
+            <label for="duedate">Due Date:</label><br>
+            <input type="date" id="duedate" name="duedate"><br>
+
+            <p>Priority of the list</p>
+            
+            <input type="radio" class="priority" name="priority" value="low">
+            <label for="low">Low:</label><br>
+
+            <input type="radio" class="priority" name="priority" value="mid">
+            <label for="mid">Mid:</label><br>
+            
+            <input type="radio" class="priority" name="priority" value="high">
+            <label for="high">High:</label><br>
+
+
+            <input id="submit" type="submit" value="Submit">
+
+        </form>
+    </dialog>
+
+</body>
+
+</html>
