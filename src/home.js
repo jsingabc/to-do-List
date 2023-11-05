@@ -1,7 +1,7 @@
 import "./style.css";
 import { makeButton } from "./create";
-import { createCard, getPriority, submit } from "./submit" //displayList
-import { myFactory } from "./notes";
+import { createCard, getPriority, submit } from "./submit";
+
 
 // where all of the created list stored in a array
 let listofTodos = [];
@@ -16,22 +16,38 @@ let tabs = function() {
     homeButton.addEventListener("click", createCard)
 }
 
-
 //main factory function to create list
-const mainFactory = function(name, title, description, dueDate) {
-    let testcase = Object.create(myFactory);
+/*const mainFactory = function(name, title, description, dueDate) {
+    
     return { 
         name: name,
         title: title,  
         description: description,
         dueDate: dueDate, 
         priority: getPriority(),
-        testcase: testcase,
+        
     }
+}*/
+
+function myFactory(){
+    let obj = {}
+    //Name var to use for the obj name newUser
+    let name = document.getElementById("name").value
+    obj[(name)] = new Array()
+
+    return obj
 }
 
-//let testCase = new mainFactory({name, title, description, dueDate}).myFactory({"sam": ('test', 'testing')})
 
+const newFactory = function(name, title, description, dueDate) {
+    const mainObj = mainFactory(name, title, description, dueDate);
+    const myObj = myFactory();
+  
+    return {
+        mainData: mainObj,
+        myData: myObj
+    };
+  };
 
 //main function that homes the create project button and submit
 let homeMainFunction = () => {
@@ -40,4 +56,5 @@ let homeMainFunction = () => {
     submit()
 }
 
-export { homeMainFunction, mainFactory, tabs, listofTodos }
+export { homeMainFunction, newFactory, tabs, listofTodos }
+//mainFactory was removed for exports

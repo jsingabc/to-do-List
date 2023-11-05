@@ -1,12 +1,12 @@
-import { homeMainFunction, listofTodos, mainFactory } from "./home";
-import { createCard, newUser } from "./submit";
+import { homeMainFunction, listofTodos, mainFactory, newFactory } from "./home";
+import { createCard, getPriority, newUser } from "./submit";
+
 
 
 function myFactory(){
     let obj = {}
     //Name var to use for the obj name newUser
     let name = document.getElementById("name").value
-    
     obj[(name)] = new Array()
 
     return obj
@@ -14,11 +14,13 @@ function myFactory(){
 
 let notes = [];
 function notesMain(){    
-    let name = document.getElementById("name").value
-    console.log(name)
+    
         
     let mainDiv = document.getElementById("content");
     mainDiv.innerText = "";
+
+    let name = document.getElementById("name").value
+    console.log(name)
     
     let formDiv = document.createElement("div")
     formDiv.setAttribute("id", "div")
@@ -50,12 +52,14 @@ function notesMain(){
 
     //button on todoList Note page to add a note
     let submit = document.getElementById("submit");
-    let newUser = myFactory()
-    
+    let newUser = newFactory()
     
     submit.addEventListener("click", (event) => {
         event.preventDefault()
         console.log(newUser)
+        console.log(newUser)
+        
+    
 
         
 
@@ -74,6 +78,7 @@ function notesMain(){
             newUser[(name)].push(checkNote)
             
             
+            
     let removeNote = document.querySelectorAll(".li")
     removeNote.forEach(button => {
     button.addEventListener("click", () => {
@@ -87,4 +92,4 @@ function notesMain(){
     
 }
     
-export { notesMain, myFactory, notes, }
+export { notesMain, notes }

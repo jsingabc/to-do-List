@@ -1,7 +1,7 @@
 import { makeButton,  } from "./create"; 
-import { mainFactory, listofTodos, tabs } from "./home";
+import { newFactory, listofTodos, tabs } from "./home";
 import { removeCard } from "./remove";
-import { notesMain, myFactory, newUser } from "./notes";
+import { notesMain } from "./notes";
 
 
 //this function handles submit, pushes to list, updates html
@@ -16,11 +16,11 @@ function submit(){
     let description = document.getElementById("description").value;
     let duedate = document.getElementById("duedate").value;
     let priority = getPriority()
-    let testcase = myFactory()
+
     
     //create a object instance of main Factory
-    let newTodo = mainFactory(name, title, description, 
-        duedate, priority, testcase)
+    let newTodo = newFactory(name, title, description, 
+        duedate, priority)
 
     listofTodos.push(newTodo)
     
@@ -95,8 +95,6 @@ let createCard = function () {
         cardDiv.appendChild(removeBtn)
         newDiv.appendChild(cardDiv)
 
-        let newUser = myFactory()
-        console.log(newUser)
     }
 }
 
@@ -137,4 +135,4 @@ let loadNotes = () => {
     
 
 
-export { submit, createCard, getPriority,  }
+export { submit, createCard, getPriority  }
